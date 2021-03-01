@@ -37,7 +37,7 @@ jobs:
         uses: docker://arm64v8/r-base:latest
         with:
           args: >
-            Rscript -e "toInstall <- setdiff(c('BiocManager', 'remotes', 'rcmdcheck'), installed.packages()[,'Package'])" -e "if(length(toInstall)) { install.packages(toInstall) }"  
+            Rscript -e "toInstall <- setdiff(c('BiocManager', 'remotes', 'rcmdcheck', 'tinytest'), installed.packages()[,'Package'])" -e "if(length(toInstall)) { install.packages(toInstall) }"  
             
       - name: Check installed packages
         uses: docker://arm64v8/r-base:latest
